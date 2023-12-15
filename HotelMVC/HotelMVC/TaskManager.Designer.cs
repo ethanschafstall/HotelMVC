@@ -7,10 +7,6 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        private Controller _controller;
-
-        public Controller Controller { get => _controller; set => _controller = value; }
-
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -37,8 +33,8 @@
             this.TaskNameInput = new System.Windows.Forms.TextBox();
             this.TaskNameLabel = new System.Windows.Forms.Label();
             this.TaskDescriptionLabel = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.CreateNewTask = new System.Windows.Forms.Button();
+            this.TaskDescriptionInput = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // CreateTask
@@ -92,15 +88,6 @@
             this.TaskDescriptionLabel.Text = "Task Description : ";
             this.TaskDescriptionLabel.Visible = false;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(141, 256);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(268, 197);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.Visible = false;
-            // 
             // CreateNewTask
             // 
             this.CreateNewTask.Location = new System.Drawing.Point(12, 490);
@@ -110,6 +97,17 @@
             this.CreateNewTask.Text = "Create New Task";
             this.CreateNewTask.UseVisualStyleBackColor = true;
             this.CreateNewTask.Visible = false;
+            this.CreateNewTask.Click += new System.EventHandler(this.CreateNewTask_Click);
+            // 
+            // TaskDescriptionInput
+            // 
+            this.TaskDescriptionInput.Location = new System.Drawing.Point(141, 256);
+            this.TaskDescriptionInput.Name = "TaskDescriptionInput";
+            this.TaskDescriptionInput.Size = new System.Drawing.Size(268, 197);
+            this.TaskDescriptionInput.TabIndex = 6;
+            this.TaskDescriptionInput.Text = "";
+            this.TaskDescriptionInput.Visible = false;
+            this.TaskDescriptionInput.TextChanged += new System.EventHandler(this.TaskDescriptionInput_TextChanged);
             // 
             // TaskManager
             // 
@@ -117,7 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 550);
             this.Controls.Add(this.CreateNewTask);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.TaskDescriptionInput);
             this.Controls.Add(this.TaskDescriptionLabel);
             this.Controls.Add(this.TaskNameLabel);
             this.Controls.Add(this.TaskNameInput);
@@ -137,9 +135,8 @@
         private System.Windows.Forms.TextBox TaskNameInput;
         private System.Windows.Forms.Label TaskNameLabel;
         private System.Windows.Forms.Label TaskDescriptionLabel;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button CreateNewTask;
-
+        private System.Windows.Forms.RichTextBox TaskDescriptionInput;
     }
 }
 

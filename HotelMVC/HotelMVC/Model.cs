@@ -11,5 +11,17 @@ namespace HotelMVC
         private Controller _controller;
 
         public Controller Controller { get => _controller; set => _controller = value; }
+
+        public bool CreateTask(Task task)
+        {
+            if (task.Name == "" && task.Description == "") 
+            { 
+                return false;
+            }
+            else 
+            {
+                return true;
+            }
+        }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +16,8 @@ namespace HotelMVC
         [STAThread]
         static void Main()
         {
+
+            Application.SetCompatibleTextRenderingDefault(true);
             Model model = new Model();
             Controller controller = new Controller();
             TaskManager view = new TaskManager();
@@ -23,9 +27,10 @@ namespace HotelMVC
 
             controller.View = view;
             controller.Model = model;
+
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TaskManager());
+
+            Application.Run(view);
         }
     }
 }
