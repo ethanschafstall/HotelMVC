@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace HotelMVC
 {
@@ -14,14 +17,9 @@ namespace HotelMVC
 
         public bool CreateTask(Task task)
         {
-            if (task.Name == "" && task.Description == "") 
-            { 
-                return false;
-            }
-            else 
-            {
-                return true;
-            }
+            if (task.Name == "" && task.Description == "") return false;
+            File.WriteAllText("tasks.txt", JsonSerializer.Serialize(task));
+            return true;
         }
     }
 }
