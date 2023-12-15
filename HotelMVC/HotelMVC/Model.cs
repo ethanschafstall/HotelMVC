@@ -8,5 +8,8 @@ namespace HotelMVC
 {
     public class Model
     {
+        private Controller _controller;
+
+        public Controller Controller { get => _controller; set => _controller = value; }
     }
 }

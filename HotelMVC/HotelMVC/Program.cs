@@ -14,9 +14,18 @@ namespace HotelMVC
         [STAThread]
         static void Main()
         {
+            Model model = new Model();
+            Controller controller = new Controller();
+            TaskManager view = new TaskManager();
+
+            view.Controller = controller;
+            model.Controller = controller;
+
+            controller.View = view;
+            controller.Model = model;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CreateTasks());
+            Application.Run(new TaskManager());
         }
     }
 }
